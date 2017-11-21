@@ -1,0 +1,39 @@
+<ion-view view-title="{{frequencias[0].nome}}">
+    <ion-content class="padding">
+        <div class="item">
+            <div class="row text-center responsive-sm">
+                <div class="col col-center">
+                    <h2 style="font-size: 20px;font-weight: bold">
+                        {{frequencias[0].nome}}
+                    </h2>
+                    
+                    <span class="my-badge my-badge-balanced">{{presencas}}</span>
+                    <span class="my-badge my-badge-assertive">{{faltas}}</span>
+                </div>
+            </div>
+            <div class="list">
+                <div class="item item-divider text-center">
+                    <div class="row">
+                        <div class="col">
+                            <h2 style="font-weight: bold">Data</h2>
+                        </div>
+                        <div class="col">
+                            <h2 style="font-weight: bold">Presente</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" ng-repeat="frequencia in frequencias">
+                    <div class="row">
+                        <div class="col text-center">
+                            {{frequencia.data}}
+                        </div>
+                        <div class="col text-center">
+                            <span ng-if="frequencia.presente" class="my-badge my-badge-balanced">Sim</span>
+                            <span ng-if="!frequencia.presente" class="my-badge my-badge-assertive">Não</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

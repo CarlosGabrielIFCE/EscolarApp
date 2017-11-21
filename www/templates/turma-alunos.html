@@ -1,0 +1,20 @@
+<ion-view view-title="Alunos">
+    <ion-nav-buttons side="primary">
+        <button ng-click="openPopover($event)" class="button button-icon ion-android-more-vertical"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list show-delete="deletando">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="aluno in alunos" type="item-text-wrap" href="#/tab/turmas/{{turmaId}}/{{aluno.id}}">
+                
+                <img ng-src="{{aluno.avatar}}">
+                <div class="row">
+                    <div class="col col-center">
+                        <h2>{{aluno.nome}}</h2>
+                    </div>
+                </div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+                <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

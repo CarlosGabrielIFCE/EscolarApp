@@ -1,0 +1,16 @@
+<ion-view view-title="Alunos">
+    <ion-content class="padding has-tabs-top">
+        <ion-list >
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="aluno in alunos|filter:filterAlunosAprovados" type="item-text-wrap" href="#/tab/desempenho/{{turmaId}}/resultado/{{aluno.id}}">
+                
+                <img ng-src="{{aluno.avatar}}">
+                <div class="row">
+                    <div class="col col-center">
+                        <h2>{{aluno.nome}}</h2>
+                    </div>
+                </div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

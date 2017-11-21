@@ -1,0 +1,23 @@
+<ion-view view-title="Desempenho">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="turma in turmas |orderBy:'situacao'" type="item-text-wrap" href="#/tab/desempenho/{{turma.id}}">
+        <img ng-src="{{turma.avatar}}">
+        <div class="row">
+          <h2>{{turma.nome}}</h2>
+        </div>
+        <div ng-if="turma.situacao==0" class="row">
+            <div class="col">
+                <span class="my-badge my-badge-balanced"> {{getAprovados(turma.id)}}</span>
+            </div>
+            <div class="col">
+                <span class="my-badge my-badge-assertive">{{getReprovados(turma.id)}}</span>
+            </div>
+          
+        </div>
+    
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

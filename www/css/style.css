@@ -1,0 +1,119 @@
+/* Empty. Add your own CSS if you like */
+
+.foto-perfil{
+    border-style: solid;
+    border-width: thin;
+    border-color:green;
+    width: 100px;
+    height: 100px;
+}
+
+ion-popover-view.fit {
+  height: auto !important;
+}
+
+ion-popover-view.fit ion-content {
+  position: relative !important;
+}
+
+.platform-android ion-popover-view.fit {
+  margin-top: 10px !important;
+}
+
+input.ng-touched{
+    background-color: #fbe9e7;
+}
+
+input.ng-valid{
+     background-color:#e8f5e9;
+}
+
+input.ng-invalid{
+    border-style: solid;
+    border-width: 1px;
+    border-color:#ff7043;
+}
+
+
+.my-badge {
+  background-color: transparent;
+  color: #AAAAAA;
+  z-index: 1;
+  display: inline-block;
+  padding: 3px 8px;
+  min-width: 10px;
+  border-radius: 10px;
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px; }
+  .badge:empty {
+    display: none; 
+}
+
+.has-tabs-bottom {
+  bottom: 53px; }
+
+.meu-link{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+.my-badge.my-badge-balanced {
+  background-color: #33cd5f;
+  color: #fff; }
+
+.my-badge.my-badge-assertive {
+  background-color: #ef473a;
+  color: #fff; }
+
+.mtable{
+    width:100%;
+    font-weight: bold;
+    border-style:solid;
+    border-width:1px;
+}
+.mtable th{
+    font-weight: bold;
+    border-style:solid;
+    border-width: 1px;
+}
+.mtable tr td{
+    border-style:solid;
+    border-width: 1px;
+}
+
+.assiduidade-ruim{
+    border: solid 1px black;
+    font-weight: bold;
+    color:#ef473a
+}
+
+.assiduidade-alert{
+    border: solid 1px black;
+    font-weight: bold;
+    color:#FFD740
+}
+
+.assiduidade-boa{
+    border: solid 1px black;
+    font-weight: bold;
+    color:#33cd5f
+}
+
+.nota-boa{
+    font-weight: bold;
+    color:#33cd5f
+}
+
+.nota-ruim{
+   
+    font-weight: bold;
+    color:#ef473a
+}
+
+.icon-size{
+    font-size: 48px;
+}

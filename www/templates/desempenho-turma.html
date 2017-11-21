@@ -1,0 +1,14 @@
+<ion-view ng-init="itemSelected1='tab-item-active';itemSelected2=''" title="Desempenho">
+    <div class="tabs-striped tabs-top tabs-background-stable">
+        <div ng-if="turma.situacao == 1" class="tabs">
+            <div class="tab-item">Resumo</div>
+        </div>
+        
+        <div ng-if="turma.situacao==0" class="tabs">
+            <a href="#/tab/desempenho/{{turmaId}}/aprovados" ng-click="itemSelected2='';itemSelected1 = 'tab-item-active' " class="tab-item {{itemSelected1}}">Aprovados</a>
+            <a href="#/tab/desempenho/{{turmaId}}/reprovados" ng-click="itemSelected1='';itemSelected2 = 'tab-item-active' " class="tab-item {{itemSelected2}}">Reprovados</a>
+        </div>
+    </div>
+    
+    <ui-view name="desempenho-info"></ui-view>
+</ion-view>

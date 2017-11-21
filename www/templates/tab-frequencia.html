@@ -1,0 +1,14 @@
+<ion-view view-title="Frequência">
+    <ion-nav-buttons side="primary">
+    </ion-nav-buttons>
+  <ion-content class="padding">
+    <ion-list show-delete="deletando">
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="turma in turmas" href="#/tab/frequencia/{{turma.id}}">
+            <img ng-src="{{turma.avatar}}">
+            <div class="row">
+                <h2>{{turma.nome}}</h2>
+            </div>            
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

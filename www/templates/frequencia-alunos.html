@@ -1,0 +1,36 @@
+<ion-view view-title="Alunos">
+    <ion-nav-buttons side="primary">
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="button-bar">
+            <button ng-click="salvar()" ng-disabled="habilitarSalvar" class="button button-positive" style="margin-bottom:5px">Salvar</button>
+        </div>
+        <ion-list>
+        <ion-item-divider class="item item-divider">
+                <div class="row">
+                    <div class="col">
+                        Aluno
+                    </div>
+                    <div class="col col-20 text-center">
+                        <button ng-click="openDatePicker()">
+                            {{dataDeHoje}}
+                        </button>
+                    </div>
+                 </div>
+        </ion-item-divider>
+        <ion-item class="item" ng-repeat="frequencia in frequencias" type="item-text-wrap">
+            <div class="row">
+                <div class="col col-center">
+                    <a href="#/tab/frequencia/aluno/{{frequencia.alunoId}}" class="meu-link">
+                        <i class="icon icon-left ion-ios-information-outline"></i>
+                        {{frequencia.nome}}
+                    </a>
+                </div>
+                <div class="col col-20 col-center">
+                    <ion-checkbox ng-model="frequencia.presente" ng-true-value="1" ng-false-value="0" style="border-style:none;"></ion-checkbox>
+                </div>
+            </div>
+        </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

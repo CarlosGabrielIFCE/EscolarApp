@@ -1,0 +1,26 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-dark">
+        <h1 class="title">Novo aluno</h1>
+        <button ng-click="closeModal()" class="button button-clear">
+            Cancelar
+        </button>
+    </ion-header-bar>
+    <ion-content>
+        <form name="formAluno">
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">
+                        Nome
+                    </span>
+                    <input ng-model="aluno.nome" type="text" required/>
+                </label>
+                
+                <button ng-click="addAluno(aluno)" ng-disabled="!formAluno.$valid" class="button button-block button-royal">
+                    Adicionar
+                </button>
+                
+            </div>
+            
+        </form>
+    </ion-content>
+</ion-modal-view>

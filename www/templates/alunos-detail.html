@@ -1,0 +1,46 @@
+<ion-view view-title="{{aluno.nome}}">
+  <ion-content class="padding">
+      <ion-item class="item" type="item-text-wrap">
+          <div class="row text-center responsive-sm">
+              <div class="col col-center">
+                <img class="foto-perfil" ng-src="{{aluno.avatar}}"/>
+              </div>
+          </div>
+          <div class="row text-center responsive-sm">
+              <div class="col col-center">
+                  <h2 style="font-weight:bold;">{{aluno.nome}}</h2>
+              </div>
+          </div>
+          <div class="row text-center responsive-sm">
+              <div class="list list-inset">
+                  <div class="row item">
+                      <label class="item item-input">
+                          <span class="input-label">Nota 1:</span>
+                          <input ng-model="aluno.nota1" type="number" class="text-center"/>
+                      </label>
+                  </div>
+                  <div class="row item">
+                      <label class="item item-input">
+                          <span class="input-label">Nota 2:</span>
+                          <input ng-model="aluno.nota2" type="number" class="text-center"/>
+                      </label>
+                  </div>
+                  <div class="row item">
+                      <label class="item item-input">
+                          <span class="input-label">Nota 3:</span>
+                          <input ng-model="aluno.nota3" type="number" class="text-center"/>
+                      </label>
+                  </div>
+                  <div class="row" style="margin-top: 10px">
+                      <div class="col col-center">
+                          <button class="button button-positive">Editar</button>
+                      </div>
+                      <div class="col col-center">
+                          <button class="button button-positive ion-android-checkmark-outline">Salvar</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </ion-item>
+    </ion-content>
+</ion-view>

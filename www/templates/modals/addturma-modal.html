@@ -1,0 +1,59 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-dark">
+        <h1 ng-if="!editando" class="title">Nova turma</h1>
+        <h1 ng-if="editando" class="title">Editando turma</h1>
+        <button ng-click="closeModal()" class="button button-clear">
+            Cancelar
+        </button>
+    </ion-header-bar>
+    <ion-content>
+        <form name="formTurma">
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">
+                        Nome da turma
+                    </span>
+                    <input ng-model="turma.nome" type="text" required/>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">
+                        Data de Início
+                    </span>
+                    <input ng-focus="openDatePickerDI()" ng-model="turma.dataInicio" type="text" required/>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">
+                        Data de término
+                    </span>
+                    <input ng-focus="openDatePickerDF()" ng-model="turma.dataTermino" type="text" required/>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">
+                        Carga Horária Total(H)
+                    </span>
+                    <input ng-model="turma.cargaHTotal" type="number" required/>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">
+                        Carga Horária Diária(H)
+                    </span>
+                    <input ng-model="turma.cargaHDiaria" type="number" required/>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Turno
+                    </div>
+                    <select ng-model="turma.turno">
+                        <option selected>Manhã</option>
+                        <option>Tarde</option>
+                        <option>Noite</option>
+                    </select>
+                </label>
+                <button ng-if="!editando" ng-click="addTurma(turma)" ng-disabled="!formTurma.$valid" class="button button-block button-royal">Adicionar</button>
+                
+                <button ng-if="editando" ng-click="atualizarTurma(turma)" ng-disabled="!formTurma.$valid" class="button button-block button-royal">Salvar</button>
+            </div>
+            
+        </form>
+    </ion-content>
+</ion-modal-view>

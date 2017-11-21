@@ -1,0 +1,139 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{aluno.nome}}">
+        
+  <ion-content class="padding has-tabs-top">
+    <button ng-click="voltar()" class="button button-dark ion-android-arrow-back">Back</button>
+      <!--item-remove-animate item-avatar item-icon-right-->
+    <ion-item class="item" type="item-text-wrap">
+<!--           -->
+            <div class="row text-center responsive-sm">
+                <div class="col col-center">
+                    <img class="foto-perfil" src="{{aluno.avatar}}"/>
+                </div>
+                
+                
+            </div>
+                 
+            <div class="row text-center responsive-sm">
+               
+                <div class="col col-center">
+                    <h2 style="font-weight: bold;">{{aluno.nome}}</h2>
+                </div>
+                
+            </div>
+            
+            <div class="row text-center responsive-sm">
+                <table class="mtable">
+                    
+                    <thead>
+                        <tr>
+                            <th colspan="2">Assiduidade</th>
+                            <th ng-class="{'assiduidade-boa':assiduidade>=85,'assiduidade-alert':assiduidade<85&&assiduidade>=75, 'assiduidade-ruim':assiduidade<75}">{{assiduidade}}%</th>
+                        </tr>
+                        <tr>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    
+                    <tr>
+                        <td style="width:33%;">
+                            <p>Presenças</p>
+                            <h3 class="nota-boa">{{frequenciaInfo.presencas}}</h3>
+                                
+                        </td>
+                        <td style="width:33%;">
+                            <p>Faltas</p>
+                            <h3 class="nota-ruim">{{frequenciaInfo.faltas}}</h3>
+                        </td>
+                        <td style="width:33%;">
+                            <p>Total</p>
+                            <h3 style="font-weight:bold;">{{totalInfo}}</h3>
+                        </td>
+                      
+                     </tr>
+                  
+                     </tbody>   
+                    
+                </table>  
+            </div>    
+            <div class="row text-center responsive-sm" style="margin-top:5px;">
+                <table style="width:100%;border:solid 1px">
+                    
+                    <thead>
+                        <tr>
+                            
+                            <th style="font-weight:bold;"><p>Nota 1</p></th>
+                            <th style="font-weight:bold;"><p>Nota 2</p></th>
+                            <th style="font-weight:bold;"><p>Nota 3</p></th>
+                        </tr>
+                    </thead>
+                    
+                    <!--<tbody>-->
+                        <tr>
+                            
+                            <td ng-class="{'nota-boa':aluno.nota1>=6,'nota-ruim':aluno.nota1<6}">{{aluno.nota1}}</td>
+                            <td ng-class="{'nota-boa':aluno.nota2>=6,'nota-ruim':aluno.nota2<6}">{{aluno.nota2}}</td>
+                            <td ng-class="{'nota-boa':aluno.nota3>=6,'nota-ruim':aluno.nota3<6}">{{aluno.nota3}}</td>
+                        </tr>
+<!--
+                    </tbody>
+-->
+                    
+                </table>
+                
+            </div>
+            
+                
+                
+            <div class="row text-center responsive-sm" style="margin-top:5px;">
+                
+                <table class="mtable">
+                    
+                    <thead>
+                        <tr>
+                            <th colspan="2">Médias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    
+                    <tr>
+                        <td style="width:50%;">
+                                <p>Parcial</p>
+                                <h3 ng-class="{'nota-boa':mediaParcial>=6,'nota-ruim':mediaParcial<6}">{{mediaParcial}}</h3>
+                                
+                        </td>
+                        <td style="width:50%;">
+                            <p>Final</p>
+                            <h3 ng-class="{'nota-boa':mediaFinal>=6,'nota-ruim':mediaFinal<6}">{{mediaFinal}}</h3>
+                        </td>
+                      
+                     </tr>
+                  
+                     </tbody>   
+                    
+                </table>  
+                
+                <span ng-if="frequenciaInfo.situacao==0"  style="margin-top:5px;">
+                    <i ng-if="mediaFinal<6" class="icon ion-sad icon-size" ng-class="{'nota-ruim':mediaFinal<6}"></i>
+                </span>
+                 <span ng-if="frequenciaInfo.situacao==0" style="margin-top:5px;">
+                    <i ng-if="mediaFinal>=6" class="icon ion-happy icon-size" ng-class="{'nota-boa':mediaFinal>=6}"></i>
+                </span>
+                       
+                
+            </div>
+                
+        
+            
+        </ion-item>
+  </ion-content>
+    
+</ion-view>

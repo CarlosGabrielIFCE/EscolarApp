@@ -1,0 +1,28 @@
+<ion-view view-title="Turmas">
+    <ion-nav-buttons side="primary">
+        <button ng-click="openPopover($event)" class="button button-icon ion-android-more-vertical"></button>
+    </ion-nav-buttons>
+  <ion-content class="padding">
+    <ion-list show-delete="deletando">
+        <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" ng-repeat="turma in turmas" href="#/tab/turmas/{{turma.id}}">
+            <img ng-src="{{turma.avatar}}">
+            <div class="row">
+                <h2>{{turma.nome}}</h2>
+            </div>
+            
+            <i ng-if="!turma.situacao" class="icon ion-locked icon-accessory"></i>
+            <i ng-if="turma.situacao" class="icon ion-chevron-right icon-accessory"></i>
+            
+            
+           <ion-option-button ng-if="turma.situacao==1" ng-click="mudaStatusTurma(turma,'0')" class="button button-balanced">Fechar</ion-option-button>
+            
+           <ion-option-button ng-if="turma.situacao==0" ng-click="mudaStatusTurma(turma,'1')" class="button button-balanced">Reabrir</ion-option-button>
+            
+            <ion-option-button ng-click="editarTurma(turma)" class="button button-positive">Editar</ion-option-button>
+            
+            <ion-delete-button ng-click="excluirTurma(turma)" class="ion-minus-circled"></ion-delete-button>
+        
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
